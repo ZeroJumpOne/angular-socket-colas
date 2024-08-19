@@ -7,7 +7,7 @@ import { PublicComponent } from './pages/public/public.component';
 
 const routes: Routes = [
    {
-      path: 'escritorio',
+      path: 'escritorio/:id',
       component: EscritorioComponent,
    },
    {

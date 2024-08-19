@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
    selector: 'app-home',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-   constructor() { }
+   constructor(
+      private router: Router,
+   ) { }
 
    ngOnInit(): void {
       const body = document.getElementsByTagName('body')[0];
@@ -17,7 +20,18 @@ export class HomeComponent implements OnInit {
          console.log('No se encontro');
          body.classList.add('container');
       }
+   }
+
+   public entrar(valor: string) : void {
+
+      if (!valor) return;
+
+      this.router.navigate(['/escritorio', valor]);
+
+
 
    }
+
+
 
 }

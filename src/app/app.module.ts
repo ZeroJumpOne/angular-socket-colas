@@ -7,6 +7,11 @@ import { EscritorioComponent } from './pages/escritorio/escritorio.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NuevoTicketComponent } from './pages/nuevo-ticket/nuevo-ticket.component';
 import { PublicComponent } from './pages/public/public.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { environment } from '../environments/environment.development';
+
+const config: SocketIoConfig = { url: environment.srv_socket, options: {} };
 
 @NgModule({
   declarations: [
@@ -14,11 +19,13 @@ import { PublicComponent } from './pages/public/public.component';
     EscritorioComponent,
     HomeComponent,
     NuevoTicketComponent,
-    PublicComponent
+    PublicComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SocketIoModule.forRoot(config),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,7 @@
+<footer class="p-2 bg-dark text-white text-start">
+   Server Status:
+   <span *ngIf="this.wsService.socketStatus" class="text-success">Online</span>
+   <span *ngIf="!this.wsService.socketStatus" class="text-danger">Offline</span>
+   My Id:
+   <span class="text-success">{{ this.usuario }}</span>
+</footer>

@@ -1,7 +1,11 @@
-<h1>Escritorio</h1>
-<h4>Atendiendo a <small>....</small></h4>
+<h1>Escritorio {{ this.escritorio }}</h1>
+@if( !ticket || ticket.id === '') {
+   <h4>Atendiendo a <b>...</b></h4>
+} @else {
+   <h4>Atendiendo a <b>{{ ticket.folio }}</b></h4>
+}
 <hr>
 
-<button class="btn btn-primary btn-lg">
-    Atender siguiente ticket
+<button class="btn btn-primary btn-lg" (click)="atender()">
+   Atender siguiente ticket
 </button>

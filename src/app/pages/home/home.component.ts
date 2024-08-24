@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit {
    }
 
    public entrar(valor: string) : void {
+      console.log('escritorio', valor);
+
 
       if (!valor) return;
 

@@ -15,19 +15,20 @@ export class NuevoTicketComponent implements OnInit {
    constructor(private wsService: WebsocketService) { }
 
    ngOnInit(): void {
-      this.wsService.listen('my-ticket').subscribe( (ticket: Ticket) => {
+      // this.wsService.listen('my-ticket').subscribe( (ticket: Ticket) => {
 
-         console.log(ticket);
+      //    console.log(ticket);
 
-         this.ticket = ticket;
-      });
+      //    this.ticket = ticket;
+      // });
    }
 
    public onNewTicket() {
       console.log('solicitando un nuevo ticket al servidor...');
 
-      this.wsService.emit('new-ticket', () => {
-
+      this.wsService.emit('new-ticket', 'system colas',  ( generado: Ticket) => {
+         // console.log(cual);
+         this.ticket = generado;
       });
 
    }
